@@ -1,5 +1,6 @@
 import 'package:consumo_api/api_giphy.dart';
 import 'package:consumo_api/api_rick.dart';
+import 'package:consumo_api/api_simpsons_episodes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           WidgetStateProperty.all<Color>(Colors.blue),
                     ),
                     onPressed: () => _goGiphy(context),
-                    child: const Text('API GIPHY')),
+                    child: const Text('API de Giphy')),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -43,10 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       foregroundColor:
                           WidgetStateProperty.all<Color>(Colors.white),
                       backgroundColor:
-                          WidgetStateProperty.all<Color>(Colors.blue),
+                          WidgetStateProperty.all<Color>(Colors.green),
                     ),
                     onPressed: () => _goRick(context),
-                    child: const Text('API RICK AND MORTHY')),
+                    child: const Text('API de Rick And Morty')),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -55,10 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       foregroundColor:
                           WidgetStateProperty.all<Color>(Colors.white),
                       backgroundColor:
-                          WidgetStateProperty.all<Color>(Colors.blue),
+                          WidgetStateProperty.all<Color>(Colors.amber),
                     ),
-                    onPressed: () => _goGiphy(context),
-                    child: const Text('API GIPHY')),
+                    onPressed: () => _goSimpsons(context),
+                    child: const Text('API de Simpsons Episodes')),
               ),
             ],
           ),
@@ -81,6 +82,15 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       MaterialPageRoute(
         builder: (_) => const ApiRick(),
+      ),
+    );
+  }
+
+  _goSimpsons(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const ApiSimpsonsEpisodes(),
       ),
     );
   }
