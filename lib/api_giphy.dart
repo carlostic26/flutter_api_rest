@@ -3,16 +3,14 @@ import 'package:consumo_api/model/gif.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class ApiGiphy extends StatefulWidget {
+  const ApiGiphy({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ApiGiphy> createState() => _ApiGiphyState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ApiGiphyState extends State<ApiGiphy> {
   late Future<List<Gif>> _listaGif;
 
   Future<List<Gif>> getGif() async {
@@ -53,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text('CONSUMO API GIPHY'),
       ),
       body: FutureBuilder<List<Gif>>(
         future: _listaGif,
