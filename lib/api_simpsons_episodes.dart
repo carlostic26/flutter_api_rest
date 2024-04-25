@@ -51,7 +51,10 @@ class _ApiSimpsonsEpisodesState extends State<ApiSimpsonsEpisodes> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('CONSUMO API RICK AND MORTHY'),
+        title: const Text(
+          'CONSUMO API EPISODIOS DE LOS SIMPSONS',
+          style: TextStyle(fontSize: 12),
+        ),
       ),
       body: FutureBuilder<List<Gif>>(
         future: _listaGif,
